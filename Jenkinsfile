@@ -30,7 +30,7 @@ pipeline {
         
         stage('Trivy FS Scan') {
             steps {
-                sh "trivy fs . --format table > fs.txt"
+                sh "trivy fs --format table > fs.txt ."
             }
         }
         
@@ -55,7 +55,7 @@ pipeline {
             steps {
                 script{
                     withDockerRegistry(credentialsId: 'Docker-creds') {
-                        sh "docker build -t Dhirajshivade/bankapp:latest ."
+                        sh "docker build -t dhirajshivade/bankapp:latest ."
                     }
                 }
             }
@@ -63,7 +63,7 @@ pipeline {
         
         stage('Trivy Image Scan') {
             steps {
-                sh "trivy image Dhirajshivade/bankapp:latest --format table > image.txt"
+                sh "trivy image dhirajshivade/bankapp:latest > image-scan.txt"
             }
         }
         
@@ -71,7 +71,7 @@ pipeline {
             steps {
                 script{
                     withDockerRegistry(credentialsId: 'Docker-creds') {
-                        sh "docker push Dhirajshivade/bankapp:latest"
+                        sh "docker push dhirajshivade/bankapp:latest"
                     }
                 }
             }
@@ -79,14 +79,14 @@ pipeline {
         
         stage('Generate SBOM using Syft') {
             steps {
-                sh "syft Dhirajshivade/bankapp:latest -o cyclonedx-json > sbom.json"
+                sh "syft dhirajshivade/bankapp:latest -o cyclonedx-json > sbom.json"
             }
         }
         
         stage('Upload SBOM to Dependency-Track using Syft') {
             steps {
                 sh '''
-                curl -X "POST" "http://13.233.124.11:8080/" \
+                curl -X "POST" "http://13.233.124.11:8080/bank-project-SBOM/" \
                 -H "Content-Type: application/json" \
                 -H "X-Api-Key: ${DEPENDENCY_TRACK_API_KEY}" \
                 --data-binary @sbom.json
