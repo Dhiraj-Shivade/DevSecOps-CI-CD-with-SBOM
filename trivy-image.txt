@@ -1,0 +1,12 @@
+2025-02-12T12:38:21.897Z	[34mINFO[0m	Detected OS: alpine
+2025-02-12T12:38:21.897Z	[33mWARN[0m	This OS version is not on the EOL list: alpine 3.21
+2025-02-12T12:38:21.897Z	[34mINFO[0m	Detecting Alpine vulnerabilities...
+2025-02-12T12:38:21.898Z	[34mINFO[0m	Number of PL dependency files: 2
+2025-02-12T12:38:21.898Z	[34mINFO[0m	Detecting jar vulnerabilities...
+2025-02-12T12:38:21.905Z	[33mWARN[0m	This OS version is no longer supported by the distribution: alpine 3.21.2
+2025-02-12T12:38:21.905Z	[33mWARN[0m	The vulnerability detection may be insufficient because security updates are not provided
+
+dhirajshivade/bankapp (alpine 3.21.2)
+=====================================
+Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+
