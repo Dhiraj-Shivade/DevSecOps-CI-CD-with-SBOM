@@ -1,2 +1,2 @@
 2025-02-12T13:03:57.564Z	[34mINFO[0m	Detected OS: unknown
-2025-02-12T13:03:57.564Z	[34mINFO[0m	Number of PL dependency files: 0
+2025-02-12T13:03:57.564Z	[34mINFO[0m	Number of PL dependency files: 0 
