@@ -3,30 +3,8 @@
 This repository contains a **DevSecOps CI/CD pipeline** that automates the build, security scanning, and deployment of a multi-tier application to an **Amazon EKS (Elastic Kubernetes Service)** cluster. The pipeline integrates various tools like **Jenkins**, **Trivy**, **Syft**, **SonarQube**, **Nexus**, and **Dependency-Track** to ensure secure and efficient software delivery.
 
 ## Architecture Diagram
-graph TD
-    A[GitHub Repository] --> B[Jenkins Server]
-    B --> C1[Git Checkout]
-    B --> C2[Maven Build]
-    B --> C3[Trivy FS Scan]
-    B --> C4[SonarQube Analysis]
-    B --> C5[Docker Build & Push]
-    B --> C6[Trivy Image Scan]
-    B --> C7[SBOM Generation with Syft]
-    B --> C8[Deploy to EKS]
+![image](https://github.com/user-attachments/assets/3b87569d-c40f-48e7-a0b6-0cf4f7cb0b9d)
 
-    C4 --> D[SonarQube Server]
-    C2 --> E[Nexus Repository]
-    C7 --> F[Dependency-Track]
-    C5 --> G[Docker Registry]
-    C8 --> H[Amazon EKS Cluster]
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#f96,stroke:#333,stroke-width:2px
-    style E fill:#6f9,stroke:#333,stroke-width:2px
-    style F fill:#9cf,stroke:#333,stroke-width:2px
-    style G fill:#fc6,stroke:#333,stroke-width:2px
-    style H fill:#c9f,stroke:#333,stroke-width:2px
 
 ## Tools Used
 
