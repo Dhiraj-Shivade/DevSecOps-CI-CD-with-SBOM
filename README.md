@@ -73,7 +73,7 @@ The following AWS EC2 instances are used:
 
 ### Prerequisites
 - AWS account with IAM permissions
-- EC2 instances with Ubuntu 22.04
+- EC2 instances with Ubuntu Server 24.04 LTS
 - GitHub repository
 - Docker and Kubernetes installed on Jenkins
 
